@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.ejb.Stateless;
 
 import ec.edu.ups.agenda.modelo.PersonaEN;
 import ec.edu.ups.agenda.modelo.TelefonoEN;
 import ec.edu.ups.agenda.utilidades.ConexionBD;
 
-
+@Stateless
 public class PersonaDAO extends ConexionBD {
 
 	Connection con;

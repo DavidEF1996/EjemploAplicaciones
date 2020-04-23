@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -17,11 +18,13 @@ import ec.edu.ups.agenda.modelo.PersonaEN;
 import ec.edu.ups.agenda.modelo.TelefonoEN;
 
 @Stateless
-public class ContactosON implements  ContactosONRemoto {
+public class ContactosON implements  ContactosONRemoto, ContactosONLocal {
 
-	PersonaDAO personaDAO = new PersonaDAO();
-	TelefonoDAO telefonoDAO = new TelefonoDAO();
-
+	@Inject
+	PersonaDAO personaDAO;
+	@Inject
+	TelefonoDAO telefonoDAO;
+	
 	PersonaEN p = new PersonaEN();
 	TelefonoEN t = new TelefonoEN();
 	public void guardarPersona(String nombre, String apellido, String cedula) throws Exception {
@@ -134,4 +137,7 @@ public class ContactosON implements  ContactosONRemoto {
 		txtNumeroTelefonico.setText("");
 		
 	}
+
+
+
 }

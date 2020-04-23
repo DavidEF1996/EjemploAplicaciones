@@ -14,15 +14,15 @@ import ec.edu.ups.agenda.modelo.TelefonoEN;
 public interface ContactosONLocal {
 
 	
-	public void guardarPersona(PersonaEN p) throws Exception;
+	public void guardarPersona(String nombre, String apellido, String cedula) throws Exception;
 	
-	public void guardarTelefono(TelefonoEN t) throws Exception;
+	public void guardarTelefono(String codigo, String numero,  String tipo, String cedula) throws Exception;
 	
 	public List<String> listarContactos() throws Exception;
 	
 	public List<String> listarContactosPorCedula(String cedula) throws Exception;
 	
-	public void actualizarPersona(PersonaEN p, TelefonoEN t, String cedula) throws Exception;
+	public void actualizarPersona(String nombre, String apellido, String codigo, String numero, String tipo, String cedula) throws Exception;
 	
 	public void eliminarContacto(String cedula) throws Exception;
 	
